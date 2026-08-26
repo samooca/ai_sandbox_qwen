@@ -1,1 +1,508 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive study guide for 15 essential product shot angles in ad film production. Learn camera techniques, lighting setups, and visual psychology for commercial directors and 3D visualizers.">
+    <meta name="keywords" content="product photography, ad film, camera angles, cinematography, commercial directing, lighting techniques">
+    <meta name="author" content="Cybertize Media">
+    <meta name="theme-color" content="#0f172a">
+    
+    <!-- OpenGraph / Social Media -->
+    <meta property="og:title" content="15 Product Shot Angles for Ad Film — Interactive Study Platform">
+    <meta property="og:description" content="Master cinematic product photography with this interactive visual study guide covering 15 essential shot angles, lighting recipes, and use cases.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cybertizemedia.com/blog/product/product-shot-angles/">
+    <meta property="og:image" content="./15-Product-Shot-Angles-For-Ad-Film.png">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="./manifest.json">
+    <link rel="apple-touch-icon" href="./icons/icon-192.png">
+    
+    <title>🎬 15 Product Shot Angles for Ad Film | Interactive Study Guide</title>
+    
+    <!-- Tailwind CSS (CDN for standalone) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6',
+                        accent: '#06b6d4',
+                        dark: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.3s ease-out',
+                        'slide-up': 'slideUp 0.4s ease-out',
+                        'pulse-slow': 'pulse 3s infinite'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LearningResource",
+        "name": "15 Product Shot Angles for Ad Film",
+        "description": "Interactive educational resource covering 15 essential product shot angles for commercial film production, including lighting techniques and use cases.",
+        "url": "https://cybertizemedia.com/blog/product/product-shot-angles/",
+        "image": "https://cybertizemedia.com/content/15-Product-Shot-Angles-For-Ad-Film.png",
+        "author": {
+            "@type": "Organization",
+            "name": "Cybertize Media"
+        },
+        "educationalLevel": "Intermediate",
+        "learningResourceType": "Visual Guide",
+        "teaches": [
+            "Product Photography",
+            "Cinematography",
+            "Lighting Techniques",
+            "Camera Angles",
+            "Commercial Directing"
+        ],
+        "about": [
+            "Low-Angle Hero Shot",
+            "Eye-Level Straight-On",
+            "Three-Quarter Angle",
+            "Flat Lay Photography",
+            "Macro Detail Shots"
+        ]
+    }
+    </script>
+    
+    <style>
+        /* Custom Styles & Utilities */
+        :root {
+            --backdrop-blur: blur(12px);
+            --card-border: 1px solid rgba(255, 255, 255, 0.1);
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-feature-settings: 'liga' 1, 'kern' 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Backdrop Blur Cards */
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: var(--backdrop-blur);
+            border: var(--card-border);
+        }
+        
+        .glass-card-light {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: var(--backdrop-blur);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Tooltip/Popover Styles */
+        [data-tooltip] {
+            position: relative;
+            cursor: help;
+        }
+        
+        [data-tooltip]:hover::after,
+        [data-tooltip]:focus::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-8px);
+            padding: 0.75rem 1rem;
+            background: rgba(15, 23, 42, 0.95);
+            color: white;
+            font-size: 0.875rem;
+            border-radius: 0.5rem;
+            white-space: nowrap;
+            max-width: 280px;
+            z-index: 1000;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.2s ease-out;
+        }
+        
+        /* Mobile Navigation */
+        .nav-sticky {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        /* Card Hover Effects */
+        .angle-card {
+            transition: var(--transition-smooth);
+        }
+        
+        .angle-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Badge Styles */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .badge-primary {
+            background: rgba(99, 102, 241, 0.2);
+            color: #6366f1;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+        }
+        
+        .badge-secondary {
+            background: rgba(139, 92, 246, 0.2);
+            color: #8b5cf6;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+        
+        .badge-accent {
+            background: rgba(6, 182, 212, 0.2);
+            color: #06b6d4;
+            border: 1px solid rgba(6, 182, 212, 0.3);
+        }
+        
+        /* Modal/Dialog Styles */
+        dialog {
+            border: none;
+            border-radius: 1rem;
+            padding: 0;
+            max-width: 600px;
+            width: 90%;
+            background: transparent;
+        }
+        
+        dialog::backdrop {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+        }
+        
+        .modal-content {
+            background: rgba(30, 41, 59, 0.98);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: var(--card-border);
+        }
+        
+        /* Light Mode Overrides */
+        .light-mode .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .light-mode {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+        
+        .light-mode .text-white {
+            color: #1e293b !important;
+        }
+        
+        .light-mode .text-gray-300 {
+            color: #64748b !important;
+        }
+        
+        /* Scroll Progress Indicator */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #6366f1, #8b5cf6, #06b6d4);
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+        
+        /* Responsive Typography */
+        @media (max-width: 640px) {
+            html {
+                font-size: 14px;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            body {
+                background: white !important;
+                color: black !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-white min-h-screen light-mode-transition">    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress no-print" id="scrollProgress" style="width: 0%"></div>
+    
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-lg">
+        Skip to main content
+    </a>
+    
+    <!-- Navigation Header -->
+    <header class="nav-sticky glass-card border-b border-white/10 no-print" role="banner">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <!-- Logo/Title -->
+                <div class="flex items-center space-x-3">
+                    <span class="text-2xl md:text-3xl" aria-hidden="true">🎬</span>
+                    <div>
+                        <h1 class="text-lg md:text-xl font-bold gradient-text">Product Shot Angles</h1>
+                        <p class="text-xs text-gray-400 hidden sm:block">Interactive Study Guide</p>
+                    </div>
+                </div>
+                
+                <!-- Right Side Controls -->
+                <div class="flex items-center space-x-2 md:space-x-4">
+                    <!-- Theme Toggle -->
+                    <button id="themeToggle" 
+                            class="p-2 rounded-lg hover:bg-white/10 transition-colors"
+                            aria-label="Toggle dark/light mode"
+                            data-tooltip="Toggle theme">
+                        <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                        </svg>
+                    </button>
+                    
+                    <!-- Table of Contents Toggle (Mobile) -->
+                    <button id="tocToggle" 
+                            class="p-2 rounded-lg hover:bg-white/10 transition-colors md:hidden"
+                            aria-label="Toggle table of contents"
+                            data-tooltip="Table of contents">
+                        <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Breadcrumb -->
+            <div class="pb-3 text-xs text-gray-400 hidden md:block">
+                <nav aria-label="Breadcrumb">
+                    <ol class="flex items-center space-x-2">
+                        <li><a href="#" class="hover:text-primary transition-colors">Home</a></li>
+                        <li>/</li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Resources</a></li>
+                        <li>/</li>
+                        <li class="text-gray-300">Product Shot Angles</li>
+                    </ol>
+                </nav>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Mobile Table of Contents Drawer -->
+    <aside id="mobileToc" 
+           class="fixed inset-0 z-50 transform -translate-x-full transition-transform duration-300 md:hidden no-print"
+           role="complementary"
+           aria-label="Table of contents">
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" id="tocOverlay"></div>
+        <div class="relative glass-card w-80 max-w-[85vw] h-full overflow-y-auto p-6">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-lg font-semibold">Contents</h2>
+                <button id="closeToc" class="p-2 hover:bg-white/10 rounded-lg" aria-label="Close menu">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <nav id="mobileTocNav" class="space-y-2"></nav>
+        </div>
+    </aside>
+    
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <!-- Hero Section -->
+        <section class="relative py-12 md:py-20 px-4 overflow-hidden" aria-labelledby="hero-heading">
+            <!-- Background Gradient -->
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 pointer-events-none"></div>
+            
+            <div class="max-w-7xl mx-auto relative">
+                <div class="text-center max-w-4xl mx-auto animate-fade-in">
+                    <div class="inline-flex items-center space-x-2 mb-6">
+                        <span class="badge badge-primary">Educational Resource</span>
+                        <span class="badge badge-secondary">15 Angles</span>
+                    </div>
+                    
+                    <h2 id="hero-heading" class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        Master <span class="gradient-text">Product Shot Angles</span> for Ad Film
+                    </h2>
+                    
+                    <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+                        An interactive visual study guide breaking down 15 essential cinematic shot angles, 
+                        lighting recipes, and visual psychology techniques for commercial directors, 
+                        3D visualizers, and D2C filmmakers.
+                    </p>
+                    
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="#angles-grid" 
+                           class="inline-flex items-center px-6 py-3 bg-primary hover:bg-primary/90 rounded-lg font-medium transition-all hover:scale-105">
+                            Explore All Angles
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </a>
+                        <a href="#quick-reference" 
+                           class="inline-flex items-center px-6 py-3 glass-card hover:bg-white/10 rounded-lg font-medium transition-all">
+                            Quick Reference
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 max-w-4xl mx-auto">
+                    <div class="glass-card rounded-xl p-4 text-center animate-slide-up" style="animation-delay: 0.1s">
+                        <div class="text-3xl md:text-4xl font-bold gradient-text">15</div>
+                        <div class="text-sm text-gray-400 mt-1">Shot Angles</div>
+                    </div>
+                    <div class="glass-card rounded-xl p-4 text-center animate-slide-up" style="animation-delay: 0.2s">
+                        <div class="text-3xl md:text-4xl font-bold gradient-text">15+</div>
+                        <div class="text-sm text-gray-400 mt-1">Lighting Setups</div>
+                    </div>
+                    <div class="glass-card rounded-xl p-4 text-center animate-slide-up" style="animation-delay: 0.3s">
+                        <div class="text-3xl md:text-4xl font-bold gradient-text">∞</div>
+                        <div class="text-sm text-gray-400 mt-1">Applications</div>
+                    </div>
+                    <div class="glass-card rounded-xl p-4 text-center animate-slide-up" style="animation-delay: 0.4s">
+                        <div class="text-3xl md:text-4xl font-bold gradient-text">100%</div>
+                        <div class="text-sm text-gray-400 mt-1">Offline Ready</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Introduction Section -->
+        <section class="py-12 md:py-16 px-4" aria-labelledby="intro-heading">
+            <article class="max-w-4xl mx-auto glass-card rounded-2xl p-6 md:p-10">
+                <h3 id="intro-heading" class="text-2xl md:text-3xl font-bold mb-6">
+                    📌 Why Shot Angles Matter
+                </h3>
+                <div class="prose prose-invert max-w-none">
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        The angle at which you photograph a product isn't just a compositional choice—it's a 
+                        <span data-tooltip="Psychological impact: How the viewer emotionally responds to the image" class="border-b border-dashed border-gray-500 cursor-help">psychological signal</span> 
+                        that shapes how consumers perceive your brand. Each angle carries its own emotional weight, 
+                        strategic function, and ideal use case across different platforms.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        This guide bridges the gap between static product showcase and emotionally compelling 
+                        <span data-tooltip="Brand storytelling: Creating narrative depth through visual choices" class="border-b border-dashed border-gray-500 cursor-help">brand storytelling</span>. 
+                        Whether you're shooting for Instagram ads, Amazon listings, or high-end commercial campaigns, 
+                        understanding these 15 foundational angles will elevate your visual communication.
+                    </p>
+                    
+                    <div class="mt-8 p-6 bg-primary/10 border-l-4 border-primary rounded-r-lg">
+                        <h4 class="font-semibold mb-2 flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            Pro Tip
+                        </h4>
+                        <p class="text-sm text-gray-300">
+                            Don't just memorize these angles—understand the <strong>why</strong> behind each one. 
+                            The best directors choose angles intentionally based on the emotional response they want to trigger.
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </section>
+        
+        <!-- Quick Reference Table -->
+        <section id="quick-reference" class="py-12 md:py-16 px-4" aria-labelledby="reference-heading">
+            <div class="max-w-7xl mx-auto">
+                <h3 id="reference-heading" class="text-2xl md:text-3xl font-bold mb-8 text-center">
+                    📐 Quick Reference Table
+                </h3>
+                
+                <div class="glass-card rounded-2xl overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left" role="table" aria-label="Quick reference table of all 15 shot angles">
+                            <thead class="bg-white/5">
+                                <tr>
+                                    <th scope="col" class="px-4 py-4 font-semibold">#</th>
+                                    <th scope="col" class="px-4 py-4 font-semibold">Shot Angle</th>
+                                    <th scope="col" class="px-4 py-4 font-semibold hidden md:table-cell">Primary Function</th>
+                                    <th scope="col" class="px-4 py-4 font-semibold hidden lg:table-cell">Recommended Lighting</th>
+                                </tr>
+                            </thead>
+                            <tbody id="quickRefTableBody" class="divide-y divide-white/10">
+                                <!-- Populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <p class="text-center text-gray-400 text-sm mt-4">
+                    Tap any row to view detailed breakdown
+                </p>
+            </div>
+        </section>
+        
+        <!-- Detailed Angles Grid -->
+        <section id="angles-grid" class="py-12 md:py-16 px-4" aria-labelledby="angles-heading">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12">
+                    <h3 id="angles-heading" class="text-2xl md:text-3xl font-bold mb-4">
+                        🎯 The 15 Shot Angles — Deep Dive
+                    </h3>
+                    <p class="text-gray-300 max-w-2xl mx-auto">
+                        Click on any card below to explore detailed breakdowns including lighting setups, 
+                        use cases, and related techniques.
+                    </p>
+                </div>
+                
+                <div id="anglesCardsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Cards populated by JavaScript -->
+                </div>
+            </div>
+        </section>
